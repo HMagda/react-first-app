@@ -1,0 +1,9 @@
+@import '../../styles/settings.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 20px auto;
+}
