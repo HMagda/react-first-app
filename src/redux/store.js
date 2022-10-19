@@ -2,7 +2,7 @@
 import {createStore} from "redux";
 import initialState from "./initialState";
 import shortid from "shortid";
-import searchString from "../components/SearchForm/SearchForm"
+// import searchString from "../components/SearchForm/SearchForm"
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -26,12 +26,9 @@ const reducer = (state, action) => {
   }
 };
 
-// const searchString = "";
-
 const store = createStore(
   reducer,
   initialState,
-  searchString,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
