@@ -2,11 +2,11 @@ import styles from "./Column.module.scss";
 import Card from "../Card/Card";
 import CardForm from "../CardForm/CardForm";
 import {useSelector} from "react-redux";
-import searchString from "../SearchForm/SearchForm";
+// import searchString from "../SearchForm/SearchForm";
 
 const Column = (props) => {
   const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id
-  && card.title.toLowerCase().includes(searchString.toLowerCase())
+  && card.title.toLowerCase().includes(state.searchString.toLowerCase())
   )
   );
 
