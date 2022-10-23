@@ -11,22 +11,22 @@ const ColumnForm = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = (listId) => (e) => {
     e.preventDefault();
-    dispatch(addColumn({ title, icon }));
+    dispatch(addColumn({ title, icon, listId }));
     setTitle('');
     setIcon('');
  };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.columnForm}>
+    <form onSubmit={handleSubmit(props.listId)} className={styles.columnForm}>
       <span>
         Title:{" "}
         <TextInput value={title} onChange={(e) => setTitle(e.target.value)} />
       </span>
       <span>
         Icon:{" "}
-        <TextInput value={icon} onChange={(e) => setIcon(e.target.value)} />{" "}
+        <TextInput value={icon} onChange={(e) => setIcon(e.target.value.toLowerCase())} />{" "}
       </span>
       <Button>Add column</Button>
     </form>

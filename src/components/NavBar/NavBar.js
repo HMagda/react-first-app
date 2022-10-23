@@ -1,27 +1,35 @@
 import styles from "./NavBar.module.scss";
-// import 'font-awesome/css/font-awesome.min.css';
+// import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const NavBar = () => {
   return (
-    
-      <nav className={styles.navMain}>
-        <div className={styles.icon}>
-          <span className="fa fa-tasks" />
-        </div>
+    <nav className={styles.navMain}>
+      <div className={styles.icon}>
+        <span className="fa fa-tasks" />
+      </div>
 
-        <ul className={styles.navMainUl}>
-          <li className={styles.navMainLi}>
-            <a href="/home">Home</a>
-          </li>
-          <li className={styles.navMainLi}>
-            <a href="/favorite">Favorite</a>
-          </li>
-          <li className={styles.navMainLi}>
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
-
+      <ul className={styles.navMainUl}>
+        <li className={styles.navMainLi}>
+          {/* <Link to="/">Home</Link> */}
+          <NavLink className={({isActive}) => isActive ? styles.linkActive : undefined } to="/" >
+            Home
+          </NavLink>
+        </li>
+        <li className={styles.navMainLi}>
+          {/* <Link to="/favorite">Favorite</Link> */}
+          <NavLink className={({isActive}) => isActive ? styles.linkActive : undefined } to="/favorite" >
+          Favorite
+          </NavLink>
+        </li>
+        <li className={styles.navMainLi}>
+          {/* <Link to="/about">About</Link> */}
+          <NavLink className={({isActive}) => isActive ? styles.linkActive : undefined } to="/about" >
+          About
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

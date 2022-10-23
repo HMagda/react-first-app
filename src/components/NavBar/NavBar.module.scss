@@ -25,6 +25,11 @@
       a {
         color: $color-light;
         text-decoration: none;
+        padding: ($base-size * 2);
+      }
+
+      .linkActive {
+        color: $color-warning;
       }
     }
   }

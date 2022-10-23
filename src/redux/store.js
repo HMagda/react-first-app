@@ -18,6 +18,17 @@ export const getFilteredCards = ({cards, searchString}, columnId) =>
 
 export const getAllColumns = (state) => state.columns;
 
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
+
+export const getColumnsByList = ({columns, searchString}, listId) =>
+columns.filter(
+    (column) =>
+    column.listId === listId &&
+      strContains(column.title, searchString)
+  );
+
+  export const getAllLists = (state) => state.lists;
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_COLUMN":
