@@ -35,8 +35,6 @@ const initialState = {
     {id: 6, columnId: 3, title: "Skyrim"},
   ],
 
-  searchString: "",
-
   lists: [
     {
       id: '1',
@@ -49,6 +47,8 @@ const initialState = {
       description: 'Lorem Ipsum'
    }
  ],
+
+ searchString: "",
 
 };
 

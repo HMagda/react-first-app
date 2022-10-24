@@ -23,8 +23,7 @@ export const getListById = ({ lists }, listId) => lists.find(list => list.id ===
 export const getColumnsByList = ({columns, searchString}, listId) =>
 columns.filter(
     (column) =>
-    column.listId === listId &&
-      strContains(column.title, searchString)
+    column.listId === listId 
   );
 
   export const getAllLists = (state) => state.lists;
