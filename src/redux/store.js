@@ -9,6 +9,8 @@ export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload });
 
+export const addList = payload => ({ type: 'ADD_LIST', payload });
+
 export const getFilteredCards = ({cards, searchString}, columnId) =>
   cards.filter(
     (card) =>
@@ -45,6 +47,11 @@ const reducer = (state, action) => {
         ...state,
         searchString: action.payload,
       };
+      case "ADD_LIST":
+        return {
+          ...state,
+          lists: [...state.lists, {...action.payload, id: shortid()}],
+        };
     default:
       return state;
   }
