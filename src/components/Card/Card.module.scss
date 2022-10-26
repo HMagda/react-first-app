@@ -11,3 +11,30 @@
     justify-content: space-between;
     font-weight: bold;
 }
+
+.container {
+    padding: $base-size;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+
+        .empty_star {
+            color: $color-special;
+            transition: .5;
+        }
+    }
+
+    .empty_star {
+        font-size: $base-size * 1.2;
+    }
+
+    .full_star {
+        font-size: $base-size * 1.2;
+        color: $color-special;
+    }
+}
+
+
+
