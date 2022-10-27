@@ -6,6 +6,8 @@ import {useState} from 'react';
 import {useDispatch} from "react-redux";
 import { toggleCardFavorite } from "../../redux/store";
 import { useEffect } from "react";
+import {useSelector} from "react-redux";
+import { getFavoriteCards } from '../../redux/store';
 
 const Card = props => {
 
@@ -14,7 +16,7 @@ const Card = props => {
 
     // const [isFavorite, setIsFavorite] = useState(false);
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     // useEffect(() => {
     //     dispatch(toggleCardFavorite(''));
@@ -25,13 +27,12 @@ const Card = props => {
           setIsShownChosen(current => !current);
           setIsShownNotChosen(current => !current);
 
-
-
-        //   dispatch(toggleCardFavorite(!isFavorite));
-        //   setIsFavorite(!isFavorite);
+          dispatch(toggleCardFavorite(props.id));
  
         }
 
+        // const favorites = useSelector(state => getFavoriteCards(state));
+        // console.log(favorites)
 
     return (
     <>

@@ -35,6 +35,12 @@ export const toggleCardFavorite = (payload) => ({
   payload,
 });
 
+export const getFavoriteCards = ({ cards }) => cards.filter(
+  (card) => 
+  card.isFavorite
+);
+
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_COLUMN":
