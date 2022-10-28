@@ -1,40 +1,50 @@
-@import '../../styles/settings.scss';
+@import "../../styles/settings.scss";
 
 .card {
-    position: relative;
-    background: $color-light;
-    border: 1px solid lighten($color-dark, 60%);
-    padding: $base-size;
-    margin: 0 0 $base-size 0;
-    border-radius: $radius;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-}
+  position: relative;
+  background: $color-light;
+  border: 1px solid lighten($color-dark, 60%);
+  padding: $base-size;
+  margin: 0 0 $base-size 0;
+  border-radius: $radius;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 
-.container {
-    padding: $base-size;
+  .icon_wrapper {
     display: flex;
-    align-items: center;
 
-    &:hover {
+    .container {
+      padding: $base-size * .8;
+      display: flex;
+      align-items: center;
+      margin-left: $base-size;
+
+      &:hover {
         cursor: pointer;
 
         .empty_star {
-            color: $color-special;
-            transition: .5;
+          color: $color-special;
+          transition: 0.5;
         }
-    }
 
-    .empty_star {
+        .trash {
+            color: $color-warning;
+            transition: 0.5;
+      }
+      }
+
+      .empty_star {
         font-size: $base-size * 1.2;
-    }
+      }
 
-    .full_star {
+      .full_star {
         font-size: $base-size * 1.2;
         color: $color-special;
+      }
+
+
     }
+  }
+
 }
-
-
-
