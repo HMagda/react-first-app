@@ -1,56 +1,40 @@
-import styles from './Card.module.scss';
-import clsx from 'clsx';
-// import Button from '../Button/Button';
-import { FaRegStar, FaStar } from 'react-icons/fa';
-import {useState} from 'react';
+import styles from "./Card.module.scss";
+// import clsx from "clsx";
+import {FaRegStar, FaStar} from "react-icons/fa";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
-import { toggleCardFavorite } from "../../redux/store";
-import { useEffect } from "react";
-import {useSelector} from "react-redux";
-import { getFavoriteCards } from '../../redux/store';
+import {toggleCardFavorite} from "../../redux/cardsRedux";
+// import {useEffect} from "react";
+// import {useSelector} from "react-redux";
+// import {getFavoriteCards} from "../../redux/store";
 
-const Card = props => {
+const Card = (props) => {
+  const [isShownNotChosen, setIsShownNotChosen] = useState(true);
+  const [isShownChosen, setIsShownChosen] = useState(false);
 
-    const [isShownNotChosen, setIsShownNotChosen] = useState(true);
-    const [isShownChosen, setIsShownChosen] = useState(false);
+  const dispatch = useDispatch();
 
-    // const [isFavorite, setIsFavorite] = useState(false);
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsShownChosen((current) => !current);
+    setIsShownNotChosen((current) => !current);
 
-    const dispatch = useDispatch();
+    dispatch(toggleCardFavorite(props.id));
+  };
 
-    // useEffect(() => {
-    //     dispatch(toggleCardFavorite(''));
-    //   }, [dispatch])
-    
-        const handleClick = (e) => {
-          e.preventDefault();
-          setIsShownChosen(current => !current);
-          setIsShownNotChosen(current => !current);
-
-          dispatch(toggleCardFavorite(props.id));
- 
-        }
-
-        // const favorites = useSelector(state => getFavoriteCards(state));
-        // console.log(favorites)
-
-    return (
+  return (
     <>
-        <li className={styles.card}><p>{props.title}</p>
+      <li className={styles.card}>
+        <p>{props.title}</p>
 
         <div onClick={handleClick} className={styles.container}>
-                {isShownNotChosen && <FaRegStar className={styles.empty_star}/>}
-                {isShownChosen && <FaStar className={styles.full_star}/>}
-                 
+          {isShownNotChosen && <FaRegStar className={styles.empty_star} />}
+          {isShownChosen && <FaStar className={styles.full_star} />}
         </div>
-
-        
-        </li>
-        {/* <li className={clsx(styles.card, isFavorite && styles.isFavorite)}>{props.title}</li> */}
-        
+      </li>
+      {/* <li className={clsx(styles.card, isFavorite && styles.isFavorite)}>{props.title}</li> */}
     </>
-
-    );
+  );
 };
 
 export default Card;
