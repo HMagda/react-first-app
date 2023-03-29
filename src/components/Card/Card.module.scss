@@ -1,4 +1,4 @@
-@import "../../styles/settings.scss";
+@import '../../styles/settings.scss';
 
 .card {
   position: relative;
@@ -15,7 +15,7 @@
     display: flex;
 
     .container {
-      padding: $base-size * .8;
+      padding: $base-size * 0.8;
       display: flex;
       align-items: center;
       margin-left: $base-size;
@@ -29,9 +29,9 @@
         }
 
         .trash {
-            color: $color-warning;
-            transition: 0.5;
-      }
+          color: $color-warning;
+          transition: 0.5;
+        }
       }
 
       .empty_star {
@@ -42,9 +42,6 @@
         font-size: $base-size * 1.2;
         color: $color-special;
       }
-
-
     }
   }
-
 }

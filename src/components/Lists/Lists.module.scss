@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 @import '../../styles/settings.scss';
 
 .lists {
@@ -18,6 +18,6 @@
   background: $color-light;
   margin-bottom: $base-size;
   border-radius: $radius;
-  box-shadow: 0 math.div($base-size, 4) 0 rgba(0,0,0,0.3);
+  box-shadow: 0 math.div($base-size, 4) 0 rgba(0, 0, 0, 0.3);
   padding: $base-size;
 }

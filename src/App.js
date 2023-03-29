@@ -1,5 +1,4 @@
 import {Routes, Route} from "react-router-dom";
-// import {Switch} from "react";
 import Home from "./components/Home/Home";
 import Container from "./components/Container/Container";
 import NavBar from "./components/NavBar/NavBar";
@@ -17,10 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/favorite" element={<Favorite />} />
-
-          {/* <Route path="/list" element={<List />} /> */}
           <Route path="/list/:listId" element={<List />} />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>

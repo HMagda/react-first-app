@@ -1,6 +1,5 @@
-import shortid from "shortid";
-import {strContains} from "../utils/strContains";
-
+import shortid from 'shortid';
+import {strContains} from '../utils/strContains';
 
 export const getFilteredCards = ({cards, searchString}, columnId) =>
   cards.filter(
@@ -8,12 +7,10 @@ export const getFilteredCards = ({cards, searchString}, columnId) =>
       card.columnId === columnId && strContains(card.title, searchString)
   );
 
-  
-  export const getFavoriteCards = ({cards}) =>
-    cards.filter((card) => card.isFavorite);
+export const getFavoriteCards = ({cards}) =>
+  cards.filter((card) => card.isFavorite);
 
-
-const createActionName = actionName => `app/cards/${actionName}`;
+const createActionName = (actionName) => `app/cards/${actionName}`;
 const ADD_CARD = createActionName('ADD_LIST');
 const TOGGLE_CARD_FAVORITE = createActionName('TOGGLE_CARD_FAVORITE');
 

@@ -1,9 +1,9 @@
-import PageTitle from "../PageTitle/PageTitle";
+import PageTitle from '../PageTitle/PageTitle';
 
 const NotFound = () => {
   return (
     <div>
-      <PageTitle title={"404 not found"}/>
+      <PageTitle title={'404 not found'} />
     </div>
   );
 };
