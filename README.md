@@ -1,6 +1,6 @@
-# To-do list
+# To-do-plus
 
-A React app for adding, categorizing and marking things to do. This app also allows the user to add different lists and categories with icons in them.
+A React app that allows users to add, categorize, and mark tasks to-do/books to read/things to check. Users can create personalized lists, add categories with custom icons. It features an option to mark favorite tasks, ensuring crucial tasks are not overlooked. Built with React, Redux, React Router, and SCSS, this app offers a visually pleasing and organized approach to task/things to check management.
 
 # Getting Started
 
@@ -12,6 +12,6 @@ A React app for adding, categorizing and marking things to do. This app also all
 # Features
 - Add new list
 - Add new category with the chosen icon in the list
-- View categorized things to-do
+- View categorized tasks to-do/books to read/things to check
 - Mark your favorites
-- Add, mark, or delete things to-do
+- Add, mark, or delete elements
